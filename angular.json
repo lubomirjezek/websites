@@ -2,5 +2,134 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "janhanko": {
+      "root": "projects/janhanko/",
+      "sourceRoot": "projects/janhanko/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/janhanko",
+            "index": "projects/janhanko/src/index.html",
+            "main": "projects/janhanko/src/main.ts",
+            "polyfills": "projects/janhanko/src/polyfills.ts",
+            "tsConfig": "projects/janhanko/tsconfig.app.json",
+            "assets": [
+              "projects/janhanko/src/favicon.ico",
+              "projects/janhanko/src/assets"
+            ],
+            "styles": [
+              "projects/janhanko/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/janhanko/src/environments/environment.ts",
+                  "with": "projects/janhanko/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "janhanko:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "janhanko:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "janhanko:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/janhanko/src/test.ts",
+            "polyfills": "projects/janhanko/src/polyfills.ts",
+            "tsConfig": "projects/janhanko/tsconfig.spec.json",
+            "karmaConfig": "projects/janhanko/karma.conf.js",
+            "styles": [
+              "projects/janhanko/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/janhanko/src/favicon.ico",
+              "projects/janhanko/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/janhanko/tsconfig.app.json",
+              "projects/janhanko/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "janhanko-e2e": {
+      "root": "projects/janhanko-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/janhanko-e2e/protractor.conf.js",
+            "devServerTarget": "janhanko:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "janhanko:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/janhanko-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "janhanko"
 }

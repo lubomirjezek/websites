@@ -23,7 +23,7 @@
               "projects/janhanko/src/assets"
             ],
             "styles": [
-              "projects/janhanko/src/styles.css"
+              "projects/janhanko/src/styles.scss"
             ],
             "scripts": []
           },

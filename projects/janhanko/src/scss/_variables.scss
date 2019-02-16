@@ -1,0 +1,47 @@
+$base-font-size: 10;
+
+$breakpoint-xxs: 480px;
+$breakpoint-xs:  640px;
+$breakpoint-s:   768px;
+$breakpoint-m:   840px;
+$breakpoint-l:   960px;
+$breakpoint-xl:  1280px;
+$breakpoint-xxl: 1366px;
+$breakpoint-3xl: 1600px;
+$breakpoint-4xl: 1920px;
+
+$theme: (
+  font-primary:   (Barlow Condensed, sans-serif),
+  font-secondary: (Barlow Condensed, sans-serif),
+
+  font-weight-light:   300,
+  font-weight-regular: 400,
+  font-weight-medium:  500,
+  font-weight-bold:    700,
+
+  text-primary:     rgb(0, 0, 0),
+  text-secondary:   rgb(255, 255, 255),
+  text-alternative: rgb(255, 255, 255),
+
+  color-primary:   rgb(0, 180, 255),
+  color-secondary: rgb(255, 0, 0),
+
+  toast-success: rgb(11, 204, 116),
+  toast-error:   rgb(201, 25, 18),
+
+  button-positive: rgb(0, 180, 255),
+  button-negative: rgb(255, 0, 0),
+  button-neutral:  rgb(0, 0, 0),
+
+  panel-primary:   rgb(255, 255, 255),
+  panel-secondary: rgb(255, 255, 255),
+
+  line-primary:     rgb(255, 255, 255),
+  line-secondary:   rgb(218, 218, 218),
+  line-alternative: rgb(255, 255, 255),
+
+  background-primary:     rgb(255, 255, 255),
+  background-secondary:   rgb(0, 0, 0),
+  background-alternative: rgb(230, 230, 230),
+  background-greybox:     rgb(210, 210, 210)
+);

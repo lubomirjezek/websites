@@ -7,7 +7,7 @@
       "root": "projects/janhanko/",
       "sourceRoot": "projects/janhanko/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "janhanko",
       "schematics": {},
       "architect": {
         "build": {
@@ -101,35 +101,12 @@
           }
         }
       }
-    },
-    "janhanko-e2e": {
-      "root": "projects/janhanko-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/janhanko-e2e/protractor.conf.js",
-            "devServerTarget": "janhanko:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "janhanko:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/janhanko-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
     }
   },
-  "defaultProject": "janhanko"
+  "defaultProject": "janhanko",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

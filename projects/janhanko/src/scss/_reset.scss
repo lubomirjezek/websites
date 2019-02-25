@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  min-height: 100%;
-}
 
 html {
   font-size: 10px;
@@ -18,7 +15,6 @@ body {
   font-family: map-get($theme, font-primary);
   font-weight: map-get($theme, font-weight-light);
   color: map-get($theme, text-primary);
-  background: map-get($theme, background-primary) url('assets/images/452A4130.png') no-repeat top center;
 }
 
 h1 { }

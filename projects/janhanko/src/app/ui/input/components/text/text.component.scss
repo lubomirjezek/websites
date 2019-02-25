@@ -1,0 +1,35 @@
+.ui-input__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.ui-input__element {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  padding: 1.5rem;
+  outline: none;
+}
+
+.ui-input__element--text {
+  height: 4.4rem;
+}
+
+.ui-input__element--textarea {
+  min-height: 8rem;
+  resize: vertical;
+  overflow: auto;
+}
+
+.ui-input__placeholder-wrapper {
+  margin: 2rem 0 1rem 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+}
+
+.ui-input__placeholder {
+  text-transform: uppercase;
+}
+
+.ui-input__placeholder--additional { }

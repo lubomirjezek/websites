@@ -1,0 +1,17 @@
+<label class="ui-input__label" [attr.for]="id">
+  <input
+    class="ui-input__checkbox-input"
+    [id]="id"
+    [checked]="checked"
+    (click)="onClick()"
+    [disabled]="isDisabled()"
+    type="checkbox">
+  <span
+    class="ui-input__checkmark"
+    [class.ui-input__checkmark--checked]="checked"
+  ></span>
+  <span class="ui-input__text">
+    <ng-content></ng-content>
+  </span>
+</label>
+

@@ -1,0 +1,31 @@
+@mixin text-theme($theme) {
+  $font-primary:     map-get($theme, font-primary);
+  $font-weight-bold: map-get($theme, font-weight-bold);
+  $text-primary:     map-get($theme, text-primary);
+  $text-secondary:   map-get($theme, text-alternative);
+  $color-primary:    map-get($theme, color-secondary);
+  $toast-error:      map-get($theme, toast-error);
+
+  .ui-input__element {
+    border: 0.1rem solid $text-primary;
+    font-family: $font-primary;
+    font-size: 1.6rem;
+  }
+
+  .ui-input__element--focused {
+    border-color: $color-primary;
+  }
+
+  .ui-input__placeholder {
+    font-family: $font-primary;
+    font-weight: $font-weight-bold;
+  }
+
+  .ui-input__placeholder--additional {
+    color: $text-secondary;
+  }
+
+  .ui-input__error {
+    color: $toast-error;
+  }
+}

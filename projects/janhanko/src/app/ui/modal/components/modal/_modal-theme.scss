@@ -1,0 +1,19 @@
+@mixin modal-theme($theme) {
+  $panel-primary: map-get($theme, panel-primary);
+  $panel-secondary: map-get($theme, panel-secondary);
+
+  $line-primary: map-get($theme, line-primary);
+
+  .ui-modal {
+    background-color: $panel-secondary;
+    border: 1px solid $line-primary;
+  }
+
+  .ui-modal__header {
+    border-bottom: 1px solid $line-primary;
+  }
+
+  .ui-modal__actions {
+    border-top: 1px solid $line-primary;
+  }
+}

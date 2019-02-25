@@ -1,13 +1,26 @@
 @import "../../../../../scss/variables";
 
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   position: absolute;
   right: 0;
   width: 23rem;
   background-color: map-get($theme, background-secondary);
-  padding: 4.5rem;
+  padding: 3rem 4.5rem;
+}
+
+.button { }
+
+.button--close {
+  align-self: flex-end;
+}
+
+.icon { }
+
+.icon--close {
+  font-size: 2.5rem;
 }
 
 .navigation {

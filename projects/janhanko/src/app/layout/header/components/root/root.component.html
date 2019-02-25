@@ -1,5 +1,7 @@
 <div class="header">
   <janhanko-logo class="header__logo" [link]="navigation[0]"></janhanko-logo>
   <janhanko-navigation class="header__navigation" [navigation]="navigation | slice:1"></janhanko-navigation>
-  <button (click)="attachSidenav()">test</button>
+  <button class="header__burger" (click)="attachSidenav()" ui-icon-button>
+    <ui-icon color="secondary">burger</ui-icon>
+  </button>
 </div>

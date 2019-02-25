@@ -1,0 +1,33 @@
+<div class="ui-input__wrapper">
+  <div class="ui-input__placeholder-wrapper">
+    <span class="ui-input__placeholder" *ngIf="hasPlaceholder()">
+      <ng-container *ngIf="isPlaceholderText()">{{ placeholder }}</ng-container>
+      <ng-container *ngIf="!isPlaceholderText()" [ngTemplateOutlet]="placeholder">
+      </ng-container>
+    </span>
+    <span class="ui-input__placeholder--additional" *ngIf="hasAdditionalPlaceholder()">
+      ({{ additionalPlaceholder }})
+    </span>
+  </div>
+  <input
+    *ngIf="type === 'text' || type === 'password'"
+    class="ui-input__element ui-input__element--text"
+    [class.ui-input__element--focused]="isFocused"
+    [formControl]="control"
+    [type]="type"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    [placeholder]="realPlaceholder"
+  >
+  <textarea
+    *ngIf="type === 'textarea'"
+    class="ui-input__element ui-input__element--textarea"
+    [formControl]="control"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    [placeholder]="realPlaceholder"
+  ></textarea>
+</div>
+<div class="ui-input__error" *ngIf="hasErrors()">
+  {{ getFirstValidatorError() }}
+</div>

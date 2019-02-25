@@ -1,0 +1,17 @@
+@import "../../icon/components/icon/icon-theme";
+@import "../../button/components/button/button-theme";
+@import "../../button/components/icon-button/icon-button-theme";
+@import "../../list/components/desc-list/desc-list-theme";
+@import "../../input/components/text/text-theme";
+@import "../../modal/components/modal/modal-theme";
+@import "../../input/components/checkbox/checkbox-theme";
+
+@mixin create-theme($theme) {
+  @include icon-theme($theme);
+  @include button-theme($theme);
+  @include icon-button-theme($theme);
+  @include desc-list-theme($theme);
+  @include text-theme($theme);
+  @include modal-theme($theme);
+  @include checkbox-theme($theme);
+}

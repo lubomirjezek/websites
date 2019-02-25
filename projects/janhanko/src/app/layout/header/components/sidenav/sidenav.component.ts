@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, HostListener, Inject, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { OverlayRef } from '@angular/cdk/overlay';
 
@@ -23,6 +23,7 @@ export class SidenavComponent implements OnInit {
 
   @HostBinding('@slideIn') doAnimate = true;
 
+  showContent: boolean;
   overlayRef: OverlayRef;
   navigation: NavigationLink[];
 
@@ -33,6 +34,11 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  @HostListener('@slideIn.done')
+  public onSlideInDone() {
+    this.showContent = true;
+  }
 
   public detachSidenav(): void {
     if (this.overlayRef) {

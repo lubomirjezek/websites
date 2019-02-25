@@ -1,0 +1,14 @@
+@mixin desc-list-theme($theme) {
+  $text-primary: map-get($theme, text-primary);
+
+  .ui-dl { }
+
+  .ui-dt {
+    color: $text-primary;
+  }
+
+  .ui-dd {
+    color: $text-primary;
+    font-weight: map-get($theme, font-weight-bold);
+  }
+}

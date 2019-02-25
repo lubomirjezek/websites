@@ -1,0 +1,23 @@
+.ui-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+.ui-icon-button .ui-icon {
+  font-size: 18px;
+}
+
+.ui-icon-button--disabled {
+  pointer-events: none;
+  cursor: none;
+}

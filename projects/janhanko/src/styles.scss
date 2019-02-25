@@ -3,3 +3,6 @@
 @import "scss/fonts";
 @import "scss/overlay";
 
+@import "app/ui/core/styles/theme";
+
+@include create-theme($theme);

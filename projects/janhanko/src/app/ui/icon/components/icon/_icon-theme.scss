@@ -1,0 +1,19 @@
+@mixin icon-theme($theme) {
+  $text-primary:      map-get($theme, text-primary);
+  $text-secondary:    map-get($theme, text-secondary);
+  $text-alternative:  map-get($theme, text-alternative);
+
+  .ui-icon { }
+
+  .ui-icon--primary {
+    color: $text-primary;
+  }
+
+  .ui-icon--secondary {
+    color: $text-secondary;
+  }
+
+  .ui-icon--alternative {
+    color: $text-alternative;
+  }
+}

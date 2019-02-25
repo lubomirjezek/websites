@@ -1,0 +1,30 @@
+@mixin checkbox-theme($theme) {
+  $text-primary: map-get($theme, text-primary);
+  $text-secondary: map-get($theme, text-primary);
+  $font-weight-normal: map-get($theme, font-weight-normal);
+  $color-primary: map-get($theme, color-primary);
+  $panel-primary: map-get($theme, panel-primary);
+
+  $line-primary: map-get($theme, line-primary);
+  $line-secondary: map-get($theme, line-secondary);
+
+  .ui-input--checkbox { }
+
+  .ui-input__label { }
+
+  .ui-input__checkbox-element { }
+
+  .ui-input__checkmark {
+    border-color: $line-secondary;
+    background-color: $panel-primary;
+  }
+
+  .ui-input__checkmark:after {
+    border-color: $color-primary;
+  }
+
+  .ui-input__text {
+    color: $text-secondary;
+    font-weight: $font-weight-normal;
+  }
+}

@@ -1,0 +1,7 @@
+@function get-text-color($color, $light_color, $dark_color) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  @return if($red * 0.299 + $green * 0.587 + $blue * 0.114 > 186, $dark_color, $light_color);
+}

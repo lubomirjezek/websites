@@ -7,6 +7,8 @@ import { RootComponent } from './components/root/root.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { IconModule } from '../../ui/icon/icon.module';
+import { ButtonModule } from '../../ui/button/button.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
   imports: [
     CommonModule,
     RouterModule,
-    OverlayModule
+    OverlayModule,
+    IconModule,
+    ButtonModule
   ],
   exports: [
     RootComponent

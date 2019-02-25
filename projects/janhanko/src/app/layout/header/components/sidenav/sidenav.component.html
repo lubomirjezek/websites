@@ -1,0 +1,8 @@
+<button (click)="detachSidenav()">close</button>
+<ul class="navigation">
+  <li class="navigation__item" *ngFor="let link of navigation">
+    <a class="navigation__link" [class.navigation__link--highlight]="link.highlight" [routerLink]="link.url">
+      {{ link.name }}
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,42 @@
+@import "../../../../../scss/variables";
+
+:host {
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 23rem;
+  background-color: map-get($theme, background-secondary);
+  padding: 4.5rem;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  margin-top: 8rem;
+  overflow: hidden;
+}
+
+.navigation__item {
+  margin: 1rem 0;
+  transform: rotate(-10deg) skew(-10deg);
+  white-space: nowrap;
+}
+
+.navigation__link {
+  color: map-get($theme, text-secondary);
+  font-weight: map-get($theme, font-weight-regular);
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.navigation__link--highlight {
+  font-weight: map-get($theme, font-weight-medium);
+  font-size: 3rem;
+}

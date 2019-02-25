@@ -67,7 +67,9 @@ export class RootComponent implements OnInit {
   private getConfig(): OverlayConfig {
     return new OverlayConfig({
       positionStrategy: this.getPosition(),
-      height: '100%'
+      height: '100%',
+      hasBackdrop: true,
+      backdropClass: 'cdk-overlay-transparent-backdrop'
     });
   }
 
@@ -90,6 +92,10 @@ export class RootComponent implements OnInit {
 
     this.overlayRef = this.overlay.create(config);
 
+    this.overlayRef
+      .backdropClick()
+      .subscribe(() => this.detachSidenav());
+
     return this.overlayRef;
   }
 
@@ -106,4 +112,11 @@ export class RootComponent implements OnInit {
         });
     }
   }
+
+  public detachSidenav(): void {
+    if (this.overlayRef) {
+      this.overlayRef.dispose();
+    }
+  }
+
 }

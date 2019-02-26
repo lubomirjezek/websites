@@ -6,6 +6,7 @@ import { NavigationLink } from '../../../../models/navigation-link';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { SIDENAV_DATA } from '../../../../models/sidenav-data';
 import { timer } from 'rxjs';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'janhanko-header',
@@ -15,45 +16,20 @@ import { timer } from 'rxjs';
 export class RootComponent implements OnInit {
 
   overlayRef: OverlayRef;
-  navigation: NavigationLink[] = [
-    {
-      name: 'Homepage',
-      url: '',
-      highlight: false
-    }, {
-      name: 'Youtube',
-      url: '/youtube',
-      highlight: true
-    }, {
-      name: 'Můj merch',
-      url: '/muj-merch',
-      highlight: true
-    }, {
-      name: 'Usc store',
-      url: '/usc-store',
-      highlight: false
-    }, {
-      name: 'US academy',
-      url: '/us-academy',
-      highlight: false
-    }, {
-      name: 'Urban Sense',
-      url: '/urban-sense',
-      highlight: false
-    }, {
-      name: 'Studio usp',
-      url: '/studio-usp',
-      highlight: false
-    }
-  ];
+  navigation: NavigationLink[];
 
   constructor(
     private overlay: Overlay,
     private viewContainerRef: ViewContainerRef,
     private injector: Injector,
+    private dataService: DataService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.dataService
+      .getNavigation()
+      .subscribe((navigation: NavigationLink[]) => this.navigation = navigation);
+  }
 
   private getPosition(): GlobalPositionStrategy {
     return this.overlay

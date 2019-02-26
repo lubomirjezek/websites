@@ -3,6 +3,38 @@
 :host {
   display: block;
   min-height: 100vh;
-  background: map-get($theme, background-primary) url('../../../../../assets/images/yt.png') no-repeat top center;
+  background: map-get($theme, background-primary) no-repeat top center;
   background-size: contain;
+  transition: background-image 0.2s ease-in-out;
+}
+
+.article {
+  max-width: 80rem;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10rem;
+}
+
+.article__name {
+  display: inline-block;
+  font-size: 12rem;
+  color: map-get($theme, text-secondary);
+  text-transform: uppercase;
+  transform: rotate(-11deg) skew(-11deg);
+  font-weight: map-get($theme, font-weight-medium);
+  margin-top: 13rem;
+  border-bottom: 0.5rem solid;
+  line-height: 1;
+}
+
+.article__name--primary {
+  border-bottom-color: map-get($theme, color-primary);
+}
+
+.article__name--secondary {
+  border-bottom-color: map-get($theme, color-secondary);
+}
+
+.article__text {
+  padding: 12rem 7rem;
 }

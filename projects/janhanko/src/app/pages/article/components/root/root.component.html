@@ -1,1 +1,10 @@
 <janhanko-header></janhanko-header>
+
+<div class="article" *ngIf="!loading" [@fadeInOut]>
+  <h1 class="article__name" [ngClass]="'article__name--' + article?.color">
+    {{ article?.name }}
+  </h1>
+  <div class="article__text">
+    {{ article?.text }}
+  </div>
+</div>

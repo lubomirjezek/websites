@@ -24,4 +24,8 @@
 
 .header__burger {
   margin-right: 1.5rem;
+
+  @media (min-width: $breakpoint-m) {
+    display: none;
+  }
 }

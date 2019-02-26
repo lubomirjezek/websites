@@ -1,0 +1,8 @@
+@import "../../../../../scss/variables";
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: map-get($theme, background-primary) url('../../../../../assets/images/yt.png') no-repeat top center;
+  background-size: contain;
+}

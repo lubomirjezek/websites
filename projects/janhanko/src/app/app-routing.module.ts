@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './pages/homepage/homepage.module#HomepageModule'
+  }, {
+    path: ':article',
+    loadChildren: './pages/article/article.module#ArticleModule'
   }
 ];
 

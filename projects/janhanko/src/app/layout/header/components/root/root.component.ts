@@ -22,27 +22,27 @@ export class RootComponent implements OnInit {
       highlight: false
     }, {
       name: 'Youtube',
-      url: 'youtube',
+      url: '/youtube',
       highlight: true
     }, {
       name: 'Můj merch',
-      url: 'muj-merch',
+      url: '/muj-merch',
       highlight: true
     }, {
       name: 'Usc store',
-      url: 'usc-store',
+      url: '/usc-store',
       highlight: false
     }, {
       name: 'US academy',
-      url: 'us-academy',
+      url: '/us-academy',
       highlight: false
     }, {
       name: 'Urban Sense',
-      url: 'urban-sense',
+      url: '/urban-sense',
       highlight: false
     }, {
       name: 'Studio usp',
-      url: 'studio-usp',
+      url: '/studio-usp',
       highlight: false
     }
   ];

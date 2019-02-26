@@ -3,6 +3,6 @@
 :host {
   display: block;
   min-height: 100vh;
-  background: map-get($theme, background-primary) url('../../../../../assets/images/YOUTUBE.jpg') no-repeat top center;
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 75%);
+  background: map-get($theme, background-primary) url('../../../../../assets/images/yt.png') no-repeat top center;
+  background-size: contain;
 }

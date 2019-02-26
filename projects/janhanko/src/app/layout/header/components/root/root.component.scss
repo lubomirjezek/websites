@@ -14,7 +14,13 @@
 
 .header__logo { }
 
-.header__navigation { }
+.header__navigation {
+  display: none;
+
+  @media (min-width: $breakpoint-m) {
+    display: inline-block;
+  }
+}
 
 .header__burger {
   margin-right: 1.5rem;

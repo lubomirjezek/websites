@@ -11,6 +11,9 @@
   $button-positive: map-get($theme, button-positive);
   $button-negative: map-get($theme, button-negative);
 
+  $color-primary: map-get($theme, color-primary);
+  $color-secondary: map-get($theme, color-secondary);
+
   $text-neutral: get-text-color($button-neutral, $text-secondary, $text-primary);
   $text-positive: get-text-color($button-positive, $text-secondary, $text-primary);
   $text-negative: get-text-color($button-negative, $text-secondary, $text-primary);
@@ -54,6 +57,24 @@
 
     &:hover {
       background-color: darken($button-negative, 10);
+    }
+  }
+
+  .ui-button--primary {
+    background-color: $color-primary;
+    color: $text-negative;
+
+    &:hover {
+      background-color: darken($color-primary, 10);
+    }
+  }
+
+  .ui-button--secondary {
+    background-color: $color-secondary;
+    color: $text-negative;
+
+    &:hover {
+      background-color: darken($color-secondary, 10);
     }
   }
 }

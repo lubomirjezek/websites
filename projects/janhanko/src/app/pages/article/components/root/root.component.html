@@ -7,4 +7,7 @@
   <div class="article__text">
     {{ article?.text }}
   </div>
+  <a [href]="article?.raw_link" target="_blank" [ui-button]="article?.color">
+    {{ article.link }}
+  </a>
 </div>

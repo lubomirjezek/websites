@@ -1,13 +1,17 @@
 <janhanko-header></janhanko-header>
 
-<div class="article" *ngIf="!loading" [@fadeInOut]>
-  <h1 class="article__name" [ngClass]="'article__name--' + article?.color">
-    {{ article?.name }}
-  </h1>
-  <div class="article__text">
-    {{ article?.text }}
-  </div>
-  <a [href]="article?.raw_link" target="_blank" [ui-button]="article?.color">
-    {{ article.link }}
-  </a>
+<div class="article">
+  <ng-container *ngIf="!loading" [@fadeInOut]>
+    <h1 class="article__name" [ngClass]="'article__name--' + article?.color">
+      {{ article?.name }}
+    </h1>
+    <div class="article__text">
+      {{ article?.text }}
+    </div>
+    <a [href]="article?.raw_link" target="_blank" [ui-button]="article?.color">
+      {{ article.link }}
+    </a>
+  </ng-container>
 </div>
+
+<janhanko-footer></janhanko-footer>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RootComponent } from './components/root/root.component';
 import { GridModule } from '../../ui/grid/grid.module';
+import { IconModule } from '../../ui/icon/icon.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { GridModule } from '../../ui/grid/grid.module';
   ],
   imports: [
     CommonModule,
-    GridModule
+    GridModule,
+    IconModule
   ],
   exports: [
     RootComponent

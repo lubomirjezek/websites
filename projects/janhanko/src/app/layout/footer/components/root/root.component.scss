@@ -1,12 +1,19 @@
 @import "../../../../../scss/variables";
 
 .footer {
-  height: 12rem;
   background-color: map-get($theme, background-secondary);
+  flex-direction: column;
+  padding: 3rem 0;
+
+  @media (min-width: $breakpoint-xl) {
+    flex-direction: row;
+  }
 }
 
 .footer__col {
-  padding: 0 3.5rem;
+  padding: 2rem 3.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .footer__text,

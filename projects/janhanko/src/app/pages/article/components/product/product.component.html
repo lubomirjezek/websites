@@ -1,0 +1,24 @@
+<div class="product">
+  <div class="product__image">
+    <img class="product__image" src="http://placehold.it/500x500" alt="">
+  </div>
+  <div class="product__info">
+    <h2 class="product__name">
+      {{ product.name }}
+    </h2>
+    <div class="product__price">
+      {{ product.price }} Kč
+    </div>
+    <div class="product__sizes">
+      <button
+        class="product__size"
+        *ngFor="let size of sizes"
+        (click)="selectedSize = size"
+        [ui-button]="selectedSize === size ? 'positive' : 'neutral'"
+      >{{ size }}</button>
+    </div>
+    <button class="product__button product__button--add" ui-button="positive">
+      Vložit do košíku
+    </button>
+  </div>
+</div>

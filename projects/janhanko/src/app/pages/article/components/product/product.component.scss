@@ -1,0 +1,51 @@
+@import "../../../../../scss/variables";
+
+.product { }
+
+.product__image {
+  clip-path: polygon(0 18.5%, 100% 0, 100% 81.5%, 0% 100%);
+}
+
+.product__image {
+  object-fit: contain;
+  width: 100%;
+}
+
+.product__info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 7rem 10rem 7rem;
+}
+
+.product__name {
+  font-weight: map-get($theme, font-weight-medium);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+.product__price {
+  font-size: 2.4rem;
+  color: map-get($theme, color-primary);
+  font-weight: map-get($theme, font-weight-bold);
+  margin-bottom: 3rem;
+}
+
+.product__sizes {
+  display: flex;
+  justify-content: center;
+}
+
+.product__size {
+  flex: 1;
+  min-width: auto;
+  padding: 0;
+  width: 4.5rem;
+  font-weight: map-get($theme, font-weight-bold);
+}
+
+.product__button { }
+
+.product__button--add {
+  margin-top: 1.5rem;
+  flex: 0 0 auto;
+}

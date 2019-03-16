@@ -6,6 +6,7 @@ import { delay, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from '../../services/data.service';
 import { Article } from '../../../../models/article';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'janhanko-article',
@@ -30,6 +31,7 @@ export class RootComponent implements OnInit, OnDestroy {
 
   destroy: Subject<null> = new Subject<null>();
   article: Article;
+  products: Product[];
   loading: boolean;
 
   constructor(
@@ -51,6 +53,9 @@ export class RootComponent implements OnInit, OnDestroy {
         this.article = article;
         this.loading = false;
       });
+
+    this.dataService.getProducts()
+      .subscribe((products: Product[]) => this.products = products);
   }
 
   ngOnDestroy() {

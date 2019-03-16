@@ -6,17 +6,21 @@ import { ArticleRoutingModule } from './article-routing.module';
 import { HeaderModule } from '../../layout/header/header.module';
 import { ButtonModule } from '../../ui/button/button.module';
 import { FooterModule } from '../../layout/footer/footer.module';
+import { ProductComponent } from './components/product/product.component';
+import { GridModule } from '../../ui/grid/grid.module';
 
 @NgModule({
   declarations: [
-    RootComponent
+    RootComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
     ArticleRoutingModule,
     HeaderModule,
     ButtonModule,
-    FooterModule
+    FooterModule,
+    GridModule
   ]
 })
 export class ArticleModule { }

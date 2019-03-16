@@ -4,8 +4,20 @@
   display: block;
   min-height: 100vh;
   background: map-get($theme, background-primary) no-repeat top center;
-  background-size: contain;
+  background-size: auto 25%;
   transition: background-image 0.2s ease-in-out;
+
+  @media (min-height: $breakpoint-xs) {
+    background-size: auto 40%;
+  }
+
+  @media (min-height: $breakpoint-l) and (orientation: portrait) {
+    background-size: auto 50%;
+  }
+
+  @media (min-width: $breakpoint-l) and (orientation: landscape) {
+    background-size: contain;
+  }
 }
 
 .article {
@@ -24,19 +36,21 @@
   font-weight: map-get($theme, font-weight-medium);
   border-bottom: 0.5rem solid;
   line-height: 1;
-  margin-bottom: 18rem;
-
+  margin-bottom: 6rem;
   font-size: 5rem;
 
   @media (min-height: $breakpoint-xs) {
     font-size: 10rem;
-    margin-top: 5rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 
   @media (min-height: $breakpoint-m) {
     font-size: 12rem;
-    margin-top: 13rem;
+    margin-top: 14rem;
+    margin-bottom: 14rem;
   }
+
 }
 
 .article__name--primary {
@@ -48,5 +62,14 @@
 }
 
 .article__text {
-  padding: 12rem 7rem;
+  padding: 5rem 2rem;
+
+  @media (min-height: $breakpoint-s) and (orientation: portrait) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  @media (min-height: $breakpoint-m) and (orientation: landscape){
+    padding: 12rem 7rem;
+  }
 }

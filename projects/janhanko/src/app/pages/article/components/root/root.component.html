@@ -11,9 +11,13 @@
         <div class="article__text">
           {{ article?.text }}
         </div>
-        <a *ngIf="article?.raw_link" [href]="article?.raw_link" target="_blank" [ui-border-button]="article?.color">
-          {{ article.link }}
-        </a>
+        <a
+          class="article__link"
+          *ngIf="article?.raw_link"
+          [href]="article?.raw_link"
+          target="_blank"
+          [ui-border-button]="article?.color"
+        >{{ article.link }}</a>
       </ng-container>
 
       <ng-template #merchTemplate>

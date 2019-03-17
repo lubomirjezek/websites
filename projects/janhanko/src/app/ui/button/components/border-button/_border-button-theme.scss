@@ -1,0 +1,86 @@
+@import "../../../core/functions/get-text-color";
+
+@mixin border-button-theme($theme) {
+  $font-primary: map-get($theme, font-secondary);
+  $font-weight-bold: map-get($theme, font-weight-bold);
+
+  $text-primary: map-get($theme, text-primary);
+  $text-secondary: map-get($theme, text-secondary);
+
+  $button-neutral: map-get($theme, button-neutral);
+  $button-positive: map-get($theme, button-positive);
+  $button-negative: map-get($theme, button-negative);
+
+  $color-primary: map-get($theme, color-primary);
+  $color-secondary: map-get($theme, color-secondary);
+
+  $text-neutral: get-text-color($button-neutral, $text-secondary, $text-primary);
+  $text-positive: get-text-color($button-positive, $text-secondary, $text-primary);
+  $text-negative: get-text-color($button-negative, $text-secondary, $text-primary);
+
+  .ui-border-button {
+    background-color: transparent;
+    color: $text-primary;
+    font-family: $font-primary;
+    font-weight: $font-weight-bold;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .ui-border-button--disabled {
+    opacity: 0.5;
+  }
+
+  .ui-border-button--neutral {
+    border-color: $button-neutral;
+    color: $button-neutral;
+
+    &:hover {
+      background-color: $button-neutral;
+      color: $text-neutral;
+    }
+  }
+
+  .ui-border-button--positive {
+    border-color: $button-positive;
+    color: $button-positive;
+
+    &:hover {
+      background-color: $button-positive;
+      color: $text-positive;
+    }
+  }
+
+  .ui-border-button--negative {
+    border-color: $button-negative;
+    color: $button-negative;
+
+    &:hover {
+      background-color: $button-negative;
+      color: $text-negative;
+    }
+  }
+
+  .ui-border-button--primary {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $text-positive;
+    }
+  }
+
+  .ui-border-button--secondary {
+    border-color: $color-secondary;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: $text-negative;
+    }
+  }
+
+}

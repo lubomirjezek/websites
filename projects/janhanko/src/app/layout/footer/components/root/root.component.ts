@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'janhanko-footer',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootComponent implements OnInit {
 
+  @Input() mode: 'normal' | 'fixed' = 'normal';
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

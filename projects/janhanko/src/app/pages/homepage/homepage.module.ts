@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RootComponent } from './components/root/root.component';
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { HeaderModule } from '../../layout/header/header.module';
+import { FooterModule } from '../../layout/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HeaderModule } from '../../layout/header/header.module';
   imports: [
     CommonModule,
     HomepageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ]
 })
 export class HomepageModule { }

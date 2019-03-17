@@ -61,7 +61,7 @@
   border-bottom-color: map-get($theme, color-secondary);
 }
 
-.article__text {
+.article__content {
   padding: 5rem 2rem;
 
   @media (min-height: $breakpoint-s) and (orientation: portrait) {
@@ -74,16 +74,22 @@
   }
 }
 
+.article__text { }
+
 .product-list {
-  padding: 5rem 0;
+  flex-wrap: wrap;
+}
 
-  @media (min-height: $breakpoint-s) and (orientation: portrait) {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-  }
+.product {
+  margin: 0;
+  flex: 0 0 100%;
 
-  @media (min-height: $breakpoint-m) and (orientation: landscape){
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+  @media (min-width: $breakpoint-s) {
+    flex: 0 0 calc(50% - 1rem);
+    margin-right: 2rem;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
   }
 }

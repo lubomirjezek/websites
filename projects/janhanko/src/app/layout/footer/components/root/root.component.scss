@@ -56,3 +56,13 @@
     text-decoration: underline;
   }
 }
+
+.footer__link--tomeno {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.footer__icon {
+  font-size: 3rem;
+}

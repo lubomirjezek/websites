@@ -6,6 +6,8 @@ import { CartRoutingModule } from './cart-routing.module';
 import { HeaderModule } from '../../layout/header/header.module';
 import { FooterModule } from '../../layout/footer/footer.module';
 import { SocialMediaModule } from '../../layout/social-media/social-media.module';
+import { InputModule } from '../../ui/input/input.module';
+import { GridModule } from '../../ui/grid/grid.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SocialMediaModule } from '../../layout/social-media/social-media.module
     CartRoutingModule,
     HeaderModule,
     FooterModule,
-    SocialMediaModule
+    SocialMediaModule,
+    InputModule,
+    GridModule
   ]
 })
 export class CartModule { }

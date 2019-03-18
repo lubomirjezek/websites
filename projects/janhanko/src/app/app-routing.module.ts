@@ -6,6 +6,9 @@ const routes: Routes = [
     path: '',
     loadChildren: './pages/homepage/homepage.module#HomepageModule'
   }, {
+    path: 'kosik',
+    loadChildren: './pages/cart/cart.module#CartModule'
+  }, {
     path: ':article',
     loadChildren: './pages/article/article.module#ArticleModule'
   }

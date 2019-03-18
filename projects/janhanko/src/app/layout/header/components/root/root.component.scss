@@ -29,3 +29,7 @@
     display: none;
   }
 }
+
+:host(.header--cart) /deep/ .navigation__link {
+  color: map-get($theme, text-primary);
+}

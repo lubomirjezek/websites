@@ -4,11 +4,13 @@
 }
 
 .ui-input__element {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 100%;
-  padding: 1.5rem;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.3rem 1rem;
   outline: none;
+  font-size: 1.6rem;
+  border: 0.1rem solid;
 }
 
 .ui-input__element--text {
@@ -22,14 +24,16 @@
 }
 
 .ui-input__placeholder-wrapper {
-  margin: 2rem 0 1rem 0;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 100%;
+  flex: 0 0 100%;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ui-input__placeholder {
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 .ui-input__placeholder--additional { }

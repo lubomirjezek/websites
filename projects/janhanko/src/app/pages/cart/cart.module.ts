@@ -8,6 +8,7 @@ import { FooterModule } from '../../layout/footer/footer.module';
 import { SocialMediaModule } from '../../layout/social-media/social-media.module';
 import { InputModule } from '../../ui/input/input.module';
 import { GridModule } from '../../ui/grid/grid.module';
+import { ButtonModule } from '../../ui/button/button.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GridModule } from '../../ui/grid/grid.module';
     FooterModule,
     SocialMediaModule,
     InputModule,
-    GridModule
+    GridModule,
+    ButtonModule
   ]
 })
 export class CartModule { }

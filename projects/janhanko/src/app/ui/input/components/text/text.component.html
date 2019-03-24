@@ -2,8 +2,7 @@
   <div class="ui-input__placeholder-wrapper">
     <span class="ui-input__placeholder" *ngIf="hasPlaceholder()">
       <ng-container *ngIf="isPlaceholderText()">{{ placeholder }}</ng-container>
-      <ng-container *ngIf="!isPlaceholderText()" [ngTemplateOutlet]="placeholder">
-      </ng-container>
+      <ng-container *ngIf="!isPlaceholderText()" [ngTemplateOutlet]="placeholder"></ng-container>
     </span>
     <span class="ui-input__placeholder--additional" *ngIf="hasAdditionalPlaceholder()">
       ({{ additionalPlaceholder }})

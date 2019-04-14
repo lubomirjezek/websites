@@ -1,6 +1,13 @@
+@import "../../../../../scss/variables";
+
 :host {
   display: block;
   min-height: 100vh;
+  background-color: map-get($theme, background-secondary);
+}
+
+.homepage__content {
+  height: 930px;
   background: no-repeat center center;
   background-size: cover;
   transition: background-image 0.4s ease-in-out;

@@ -1,6 +1,7 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'janhanko-homepage',
@@ -17,15 +18,19 @@ export class RootComponent implements OnInit, OnDestroy {
     'usc-store.jpg',
     'youtube.jpg'
   ];
+  background: string;
+  clip: any;
 
-  @HostBinding('style.background-image') background: string;
-
-  constructor() { }
+  constructor(
+    private domSanitizer: DomSanitizer
+  ) { }
 
   ngOnInit() {
-    this.setBackground(0);
+    // this.setBackground(0);
 
-    interval(3000)
+    this.background = `url(assets/images/${this.backgrounds[0]})`;
+
+    interval(10)
       .pipe(
         takeUntil(this.destroy)
       )
@@ -37,7 +42,8 @@ export class RootComponent implements OnInit, OnDestroy {
   }
 
   private setBackground(index: number): void {
-    this.background = `url(assets/images/${this.backgrounds[index % this.backgrounds.length]})`;
+    this.clip = this.domSanitizer.bypassSecurityTrustStyle(`circle(${index % 100}% at 50% 50%)`);
+
   }
 
 }

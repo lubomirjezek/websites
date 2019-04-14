@@ -4,7 +4,11 @@
 
 <div class="cart">
   <h1 class="cart__name">Objednávka</h1>
-  <h2 class="cart__subname">Dodací údaje</h2>
+  <ui-row>
+    <ui-col>
+      <h2 class="cart__subname">Fakturační údaje</h2>
+    </ui-col>
+  </ui-row>
   <ui-row>
     <ui-col>
       <ui-input
@@ -61,6 +65,80 @@
   </ui-row>
   <ui-row>
     <ui-col>
+      <h2 class="cart__subname">Dodací údaje</h2>
+    </ui-col>
+    <ui-col horizontal-right vertical-bottom>
+      <ui-input [control]="form.controls.test" type="checkbox">dodací stejná jako fakturační</ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <ui-input
+        type="text"
+        [control]="form.controls.test"
+        placeholder="Jméno a příjmení"
+      ></ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <ui-input
+        type="text"
+        [control]="form.controls.test"
+        placeholder="Telefon"
+      ></ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <ui-input
+        type="text"
+        [control]="form.controls.test"
+        placeholder="Ulice a číslo popisné"
+      ></ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <ui-input
+        type="text"
+        [control]="form.controls.test"
+        placeholder="PSČ"
+      ></ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <ui-input
+        type="text"
+        [control]="form.controls.test"
+        placeholder="Město"
+      ></ui-input>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <h2 class="cart__subname">Doprava</h2>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col></ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <h2 class="cart__subname">Platba</h2>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col></ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
+      <hr>
+    </ui-col>
+  </ui-row>
+  <ui-row>
+    <ui-col>
       <ui-input
         type="textarea"
         [control]="form.controls.test"
@@ -68,18 +146,6 @@
         additionalPlaceholder="volitelné"
       ></ui-input>
     </ui-col>
-  </ui-row>
-  <h2 class="cart__subname">Fakturační údaje</h2>
-  <ui-row>
-    <ui-col></ui-col>
-  </ui-row>
-  <h2 class="cart__subname">Doprava</h2>
-  <ui-row>
-    <ui-col></ui-col>
-  </ui-row>
-  <h2 class="cart__subname">Platba</h2>
-  <ui-row>
-    <ui-col></ui-col>
   </ui-row>
   <ui-row>
     <ui-col>

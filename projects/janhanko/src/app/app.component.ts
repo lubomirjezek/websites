@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { AppService } from './app.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'janhanko-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'janhanko';
+export class AppComponent implements OnInit {
+
+  constructor(
+    private appService: AppService
+  ) { }
+
+  ngOnInit() {
+    this.appService.getArticleImages()
+      .subscribe((images: string[]) => this.preload(images));
+  }
+
+  private preload(sources: string[]): void {
+    sources.forEach(source => {
+      const image = new Image();
+
+      image.src = source;
+    });
+  }
+
 }

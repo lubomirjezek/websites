@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RootComponent } from './components/root/root.component';
+import { CartComponent } from './components/cart/cart.component';
 import { CartRoutingModule } from './cart-routing.module';
 import { HeaderModule } from '../../layout/header/header.module';
 import { FooterModule } from '../../layout/footer/footer.module';
@@ -12,7 +12,7 @@ import { ButtonModule } from '../../ui/button/button.module';
 
 @NgModule({
   declarations: [
-    RootComponent
+    CartComponent
   ],
   imports: [
     CommonModule,

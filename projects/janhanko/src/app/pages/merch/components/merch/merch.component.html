@@ -7,26 +7,11 @@
     </h1>
 
     <div class="article__content">
-      <ng-container *ngIf="article?.id !== 'muj-merch'; else merchTemplate">
-        <div class="article__text">
-          {{ article?.text }}
-        </div>
-        <a
-          class="article__link"
-          *ngIf="article?.raw_link"
-          [href]="article?.raw_link"
-          target="_blank"
-          [ui-border-button]="article?.color"
-        >{{ article.link }}</a>
-      </ng-container>
-
-      <ng-template #merchTemplate>
         <ui-row class="product-list">
           <ui-col class="product" *ngFor="let product of products">
             <janhanko-product [product]="product"></janhanko-product>
           </ui-col>
         </ui-row>
-      </ng-template>
     </div>
   </ng-container>
 </div>

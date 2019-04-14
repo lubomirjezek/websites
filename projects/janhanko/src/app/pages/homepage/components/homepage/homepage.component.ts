@@ -5,10 +5,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'janhanko-homepage',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss']
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.scss']
 })
-export class RootComponent implements OnInit, OnDestroy {
+export class HomepageComponent implements OnInit, OnDestroy {
   destroy: Subject<null> = new Subject<null>();
   backgrounds: string[] = [
     'muj-merch.jpg',

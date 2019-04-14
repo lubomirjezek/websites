@@ -1,17 +1,17 @@
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { of, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { delay, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 
-import { DataService } from '../../services/data.service';
+import { ArticleService } from '../../services/article.service';
 import { Article } from '../../../../models/article';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Product } from '../../../../models/product';
 
 @Component({
   selector: 'janhanko-article',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss'],
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.scss'],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -25,7 +25,7 @@ import { Product } from '../../../../models/product';
     ])
   ]
 })
-export class RootComponent implements OnInit, OnDestroy {
+export class ArticleComponent implements OnInit, OnDestroy {
 
   @HostBinding('style.background-image') image: string;
 
@@ -35,8 +35,8 @@ export class RootComponent implements OnInit, OnDestroy {
   loading: boolean;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private dataService: DataService
+    protected activatedRoute: ActivatedRoute,
+    protected articleService: ArticleService
   ) { }
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class RootComponent implements OnInit, OnDestroy {
         tap(() => this.loading = true),
         takeUntil(this.destroy),
         map((params: Params) => params.article),
-        switchMap((name: string) => this.dataService.getArticle(name)),
+        switchMap((name: string) => this.articleService.getArticle(name)),
         tap((article: Article) => this.image = `url('${article.image}')`),
         delay(100)
       )
@@ -53,9 +53,6 @@ export class RootComponent implements OnInit, OnDestroy {
         this.article = article;
         this.loading = false;
       });
-
-    this.dataService.getProducts()
-      .subscribe((products: Product[]) => this.products = products);
   }
 
   ngOnDestroy() {

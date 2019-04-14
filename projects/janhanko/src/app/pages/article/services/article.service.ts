@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Article } from '../../../models/article';
-import { Product } from '../../../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class ArticleService {
 
   readonly ARTICLES: Article[] = [
     {
@@ -60,66 +59,11 @@ export class DataService {
       color: 'primary'
     }
   ];
-  readonly PRODUCTS: Product[] = [
-    {
-      id: '1',
-      name: 'Náramek na ruku',
-      images: [],
-      price: 350,
-      params: [],
-      available_params: [
-        {
-          name: 'Velikost',
-          value: 'S'
-        }, {
-          name: 'Velikost',
-          value: 'M'
-        }, {
-          name: 'Velikost',
-          value: 'L'
-        }, {
-          name: 'Velikost',
-          value: 'XL'
-        }, {
-          name: 'Velikost',
-          value: 'XXL'
-        }
-      ]
-    }, {
-      id: '1',
-      name: 'Náramek na ruku',
-      images: [],
-      price: 350,
-      params: [],
-      available_params: [
-        {
-          name: 'Velikost',
-          value: 'S'
-        }, {
-          name: 'Velikost',
-          value: 'M'
-        }, {
-          name: 'Velikost',
-          value: 'L'
-        }, {
-          name: 'Velikost',
-          value: 'XL'
-        }, {
-          name: 'Velikost',
-          value: 'XXL'
-        }
-      ]
-    }
-  ];
 
   constructor() { }
 
   public getArticle(id: string): Observable<Article> {
     return of(this.ARTICLES.find(article => article.id === id));
-  }
-
-  public getProducts(): Observable<Product[]> {
-    return of(this.PRODUCTS);
   }
 
 }

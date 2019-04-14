@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ArticleComponent } from './components/article/article.component';
-import { ArticleRoutingModule } from './article-routing.module';
 import { HeaderModule } from '../../layout/header/header.module';
 import { ButtonModule } from '../../ui/button/button.module';
 import { FooterModule } from '../../layout/footer/footer.module';
+import { ProductComponent } from './components/product/product.component';
 import { GridModule } from '../../ui/grid/grid.module';
 import { SocialMediaModule } from '../../layout/social-media/social-media.module';
+import { MerchComponent } from './components/merch/merch.component';
+import { MerchRoutingModule } from './merch-routing.module';
 
 @NgModule({
   declarations: [
-    ArticleComponent
+    ProductComponent,
+    MerchComponent
   ],
   imports: [
     CommonModule,
-    ArticleRoutingModule,
+    MerchRoutingModule,
     HeaderModule,
     ButtonModule,
     FooterModule,
@@ -23,4 +25,4 @@ import { SocialMediaModule } from '../../layout/social-media/social-media.module
     SocialMediaModule
   ]
 })
-export class ArticleModule { }
+export class MerchModule { }

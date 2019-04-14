@@ -5,10 +5,10 @@ import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'janhanko-cart',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.scss']
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class RootComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit, OnDestroy {
   destroy: Subject<null> = new Subject<null>();
   form: FormGroup = new FormGroup({
     test: new FormControl()

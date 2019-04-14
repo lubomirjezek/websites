@@ -1,0 +1,26 @@
+<janhanko-header></janhanko-header>
+
+<div class="article">
+  <ng-container *ngIf="!loading" [@fadeInOut]>
+    <h1 class="article__name" [ngClass]="'article__name--' + article?.color">
+      {{ article?.name }}
+    </h1>
+
+    <div class="article__content">
+      <div class="article__text">
+        {{ article?.text }}
+      </div>
+      <a
+        class="article__link"
+        *ngIf="article?.raw_link"
+        [href]="article?.raw_link"
+        target="_blank"
+        [ui-border-button]="article?.color"
+      >{{ article.link }}</a>
+    </div>
+  </ng-container>
+</div>
+
+<janhanko-social-media-bar></janhanko-social-media-bar>
+
+<janhanko-footer></janhanko-footer>

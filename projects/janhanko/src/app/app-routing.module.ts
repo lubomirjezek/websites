@@ -9,6 +9,9 @@ const routes: Routes = [
     path: 'kosik',
     loadChildren: './pages/cart/cart.module#CartModule'
   }, {
+    path: 'muj-merch',
+    loadChildren: './pages/merch/merch.module#MerchModule'
+  }, {
     path: ':article',
     loadChildren: './pages/article/article.module#ArticleModule'
   }

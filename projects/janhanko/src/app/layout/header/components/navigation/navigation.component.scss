@@ -23,3 +23,17 @@
 .navigation__link--highlight {
   text-transform: uppercase;
 }
+
+.navigation__link--cart {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navigation__icon { }
+
+.navigation__icon--cart {
+  font-size: 2.6rem !important;
+}

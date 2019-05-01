@@ -2,8 +2,13 @@
 
 <janhanko-social-media-bar></janhanko-social-media-bar>
 
-<div class="homepage__content" [style.background-image]="background" [style.clip-path]="clip"></div>
-<!--<div class="homepage__content" [style.background-image]="background"></div>-->
-
+<div
+  class="homepage__content"
+  [style.background-image]="backgroundStyle"
+  [style.clip-path]="clipStyle"
+  [style.height.px]="969"
+>
+  <h1 class="homepage__title">{{ slides[currentSlideIndex].title }}</h1>
+</div>
 
 <janhanko-footer mode="fixed"></janhanko-footer>

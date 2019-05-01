@@ -7,8 +7,21 @@
 }
 
 .homepage__content {
-  height: 930px;
   background: no-repeat center center;
   background-size: cover;
   transition: background-image 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage__title {
+  font-size: 30rem;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: map-get($theme, text-secondary);
+  font-weight: map-get($theme, font-weight-medium);
+  transform: rotate(-11deg) skew(-11deg);
+  margin-bottom: 15rem;
 }

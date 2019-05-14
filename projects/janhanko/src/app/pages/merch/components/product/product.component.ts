@@ -20,14 +20,14 @@ export class ProductComponent implements OnInit, OnChanges {
   ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.hasOwnProperty('product') && changes.product.isFirstChange()) {
+/*    if (changes.hasOwnProperty('product') && changes.product.isFirstChange()) {
       this.product.available_params
         .forEach((param: ProductParam) => {
           if (param.name === 'Velikost') {
             this.sizes.push(param.value);
           }
         });
-    }
+    }*/
   }
 
 }

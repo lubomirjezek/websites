@@ -31,6 +31,6 @@
   }
 }
 
-:host(.header--cart) /deep/ .navigation__link {
+:host(.header--cart)::ng-deep .navigation__link {
   color: map-get($theme, text-primary);
 }

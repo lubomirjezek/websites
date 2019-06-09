@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { Product } from '../../../../models/product';
-import { ProductParam } from '../../../../models/product-param';
+import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'janhanko-product',
@@ -15,7 +15,9 @@ export class ProductComponent implements OnInit, OnChanges {
   sizes: string[] = [];
   selectedSize: string;
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit() { }
 
@@ -30,4 +32,7 @@ export class ProductComponent implements OnInit, OnChanges {
     }*/
   }
 
+  addToCart() {
+    this.cartService.addToCart(this.product);
+  }
 }

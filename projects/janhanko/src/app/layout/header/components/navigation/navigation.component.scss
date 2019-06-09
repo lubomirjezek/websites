@@ -26,6 +26,7 @@
 
 .navigation__link--cart {
   text-decoration: none;
+  position: relative;
 
   &:hover {
     text-decoration: none;
@@ -36,4 +37,11 @@
 
 .navigation__icon--cart {
   font-size: 2.6rem !important;
+}
+
+.navigation__count {
+  position: absolute;
+  right: -0.3rem;
+  top: 0;
+  font-size: 1.4rem;
 }

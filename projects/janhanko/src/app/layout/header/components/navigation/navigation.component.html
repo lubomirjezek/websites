@@ -6,6 +6,7 @@
   </li>
   <li class="navigation__item">
     <a class="navigation__link navigation__link--cart" [routerLink]="['/', 'kosik']" ui-icon-button>
+      <span class="navigation__count">{{ productCount }}</span>
       <ui-icon class="navigation__icon navigation__icon--cart">cart</ui-icon>
     </a>
   </li>

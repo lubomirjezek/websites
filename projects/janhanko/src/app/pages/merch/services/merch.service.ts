@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Product } from '../../../models/product';
 import { BaseService } from '../../../base.service';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,4 @@ export class MerchService extends BaseService {
         map((response: any) => response.products)
       );
   }
-
 }

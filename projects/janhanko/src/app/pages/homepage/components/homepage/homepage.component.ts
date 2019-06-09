@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, interval, Subject } from 'rxjs';
-import { filter, takeUntil, throttleTime } from 'rxjs/operators';
+import { filter, map, takeUntil, tap, throttleTime } from 'rxjs/operators';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { HomepageSlide } from '../../../../models/homepage-slide';
 
@@ -15,11 +15,11 @@ export class HomepageComponent implements OnInit, OnDestroy {
   destroy: Subject<null> = new Subject<null>();
   slides: HomepageSlide[] = [
     {
-      title: 'Můj merch',
-      background: 'muj-merch.jpg'
-    }, {
       title: 'Youtube',
       background: 'youtube.jpg'
+    }, {
+      title: 'Můj merch',
+      background: 'muj-merch.jpg'
     }, {
       title: 'USCstore',
       background: 'usc-store.jpg'
@@ -34,11 +34,15 @@ export class HomepageComponent implements OnInit, OnDestroy {
       background: 'studio-usp.jpg'
     }
   ];
-  currentSlideIndex = 0;
-  currentClip = 100 - this.STEP_SIZE;
 
+  clip = 0;
+
+  currIndex = 0;
+  nextIndex = 1;
+  currBackgroundStyle;
+  nextBackgroundStyle;
   clipStyle;
-  backgroundStyle;
+
 
   constructor(
     private domSanitizer: DomSanitizer
@@ -49,14 +53,22 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
     fromEvent(window, 'wheel')
       .pipe(
-        filter((event: WheelEvent) => event.deltaY > 0),
-        throttleTime(30)
+        throttleTime(30),
+        map((event: WheelEvent) => event.deltaY > 0)
       )
-      .subscribe(() => {
-        this.recalculateClip();
+      .subscribe((direction: boolean) => {
+        if (direction) {
+          this.clipUp();
+        } else {
+          this.clipDown();
+        }
 
-        if (this.currentClip === 0) {
-          this.recalculateSlide();
+        if (this.clip === 0 && direction) {
+          this.nextSlide();
+        }
+
+        if (this.clip === 90 && !direction) {
+          this.prevSlide();
         }
 
         this.updateStyles();
@@ -67,19 +79,49 @@ export class HomepageComponent implements OnInit, OnDestroy {
     this.destroy.next();
   }
 
-  private recalculateClip(): void {
-    this.currentClip = (this.currentClip + this.STEP_SIZE) % 100;
+  private clipUp(): void {
+    this.clip = this.clip + this.STEP_SIZE;
+
+    if (this.clip >= 100) {
+      this.clip = 0;
+    }
   }
 
-  private recalculateSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
+  private clipDown(): void {
+    this.clip = this.clip - this.STEP_SIZE;
+
+    if (this.clip < 0) {
+      this.clip = 90;
+    }
+  }
+
+  private nextSlide(): void {
+    this.currIndex++;
+    this.nextIndex++;
+
+    if (this.nextIndex >= this.slides.length) {
+      this.currIndex = 0;
+      this.nextIndex = 1;
+    }
+  }
+
+  private prevSlide(): void {
+    this.currIndex--;
+    this.nextIndex--;
+
+    if (this.currIndex < 0) {
+      this.currIndex = this.slides.length - 2;
+      this.nextIndex = this.slides.length - 1;
+    }
   }
 
   private updateStyles(): void {
-    const background = this.slides[this.currentSlideIndex].background;
+    const nextBackground = this.slides[this.nextIndex].background;
+    const currBackground = this.slides[this.currIndex].background;
 
-    this.backgroundStyle = `url(assets/images/${background})`;
-    this.clipStyle = this.domSanitizer.bypassSecurityTrustStyle(`circle(${this.currentClip}% at 50% 50%)`);
+    this.currBackgroundStyle = `url(assets/images/${currBackground})`;
+    this.nextBackgroundStyle = `url(assets/images/${nextBackground})`;
+    this.clipStyle = this.domSanitizer.bypassSecurityTrustStyle(`circle(${this.clip}% at 50% 50%)`);
   }
 
 }

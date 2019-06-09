@@ -2,13 +2,17 @@
 
 <janhanko-social-media-bar></janhanko-social-media-bar>
 
-<div
-  class="homepage__content"
-  [style.background-image]="backgroundStyle"
-  [style.clip-path]="clipStyle"
-  [style.height.px]="969"
->
-  <h1 class="homepage__title">{{ slides[currentSlideIndex].title }}</h1>
+<div class="homepage__slides">
+  <div class="homepage__slide" [style.background-image]="currBackgroundStyle">
+    <h1 class="homepage__title">{{ slides[currIndex].title }}</h1>
+  </div>
+  <div
+    class="homepage__slide"
+    [style.background-image]="nextBackgroundStyle"
+    [style.clip-path]="clipStyle"
+  >
+    <h1 class="homepage__title">{{ slides[nextIndex].title }}</h1>
+  </div>
 </div>
 
 <janhanko-footer mode="fixed"></janhanko-footer>

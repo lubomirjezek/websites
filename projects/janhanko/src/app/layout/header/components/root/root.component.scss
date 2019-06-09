@@ -18,7 +18,7 @@
 .header__navigation {
   display: none;
 
-  @media (min-width: $breakpoint-m) {
+  @media (min-width: $breakpoint-l) {
     display: inline-block;
   }
 }
@@ -26,7 +26,7 @@
 .header__burger {
   margin-right: 1.5rem;
 
-  @media (min-width: $breakpoint-m) {
+  @media (min-width: $breakpoint-l) {
     display: none;
   }
 }
